@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand">Creative Store</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link products" routerLink="/admin/product">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link category" routerLink="/admin/category">Category</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link orders" routerLink="/admin/order">Orders</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <button class="btn btn-warning text-dark" type="submit" (click)="logout($event)">Logout</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+</body>
+</html>

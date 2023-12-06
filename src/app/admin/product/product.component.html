@@ -1,0 +1,77 @@
+<app-navbar></app-navbar>
+<div #dynamicComponentContainer></div>
+<h2 class="text-center mt-2 mb-2">All Products</h2>
+<div class="container mb-2">
+  <button class="btn btn-warning rounded-0">Product Category</button>
+</div>
+
+<div class="container ms-auto mb-auto">
+  <div class="row">
+  <div class="col-lg-2 col-md-4 col-sm-4 col-xs-4 mb-4" *ngFor="let item of categoryData ">
+<div class="card category-card">
+  <img src="data:image/png;base64,{{item.image}}" alt="{{item.name}}" class="card-img-top img-fluid">
+  <div class="card-body text-center" style="background-color: bisque;">
+    <h5 class="card-title text-warning">{{item.name}}</h5>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="container container1 d-flex justify-content-center align-items-center mt-5">
+  <div class="input-group">
+    <input class="form-control" [(ngModel)]="searchTerm" type="text" placeholder="Search by name">
+    <button type="submit" class="btn btn-warning">Search</button>
+  </div>
+</div>
+
+
+
+<div class="container mt-4">
+  <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#myModal">Add New Product</button>
+  <app-product-modal #myModal></app-product-modal>
+</div>
+    
+    <div class="container mt-3">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th class="align-middle text-center" scope="col">Product image</th>
+            <th class="align-middle text-center" scope="col">name</th>
+            <th class="align-middle text-center" scope="col">Category</th>
+            <th class="align-middle text-center" scope="col">Stock Quantity</th>
+            <th class="align-middle text-center" scope="col">Unit Price</th>
+            <th class="align-middle text-center" scope="col">Description</th>
+            <th class="align-middle text-center" scope="col">Controls</th>
+            <th class="align-middle text-center" scope="col">Controls</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let item of filteredProducts ">
+          <td class="align-middle text-center"><img style="width: 50px; height: 50px;" src="data:image/png;base64,{{item.image}}" alt=""></td>
+          <td class="align-middle text-center">{{item.name}}</td>
+          <td class="align-middle text-center">{{item.id}}</td>
+          <td class="align-middle text-center">{{item.stock}}</td>
+          <td class="align-middle text-center">{{item.price}}</td>
+          <td class="align-middle text-center">{{item.description}}</td>
+          <td class="align-middle text-center">
+            <i class="fa-solid fa-pen-to-square"[routerLink]="['/admin/edit', item.id]"></i>
+            
+          </td>
+          
+
+          <td class="align-middle text-center"><i class="fa-solid fa-trash" (click)="delProducts(item.id)"></i></td>
+          
+        
+         </tr>
+          
+         
+         
+        
+        </tbody>
+      </table>
+    
+    </div>

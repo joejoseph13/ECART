@@ -1,0 +1,50 @@
+.green-div {
+    background-color: #4CAF50;
+    padding: 20px;
+    border-radius: 20px;
+    
+  }
+  
+  
+
+  .left-section img {
+    max-width: 50%;
+    
+  }
+  
+  .right-section {
+    color: #fff;
+  }
+  
+  .right-section .btn-primary {
+    margin-top: 10px;
+  }
+  
+  .right-section p {
+    color: #f1f1f1;
+  }
+  /* Optional styles for social login icons */
+.social-login-icons .btn {
+  margin-top: 10px;
+  width: 100%;
+ 
+}
+
+
+.btn-facebook {
+  background-color: #3b5998;
+  color: #ffffff;
+  border-radius: 50px;
+}
+
+.btn-google {
+  background-color: #db4437;
+  color: #ffffff;
+  border-radius: 50px;
+}
+
+.btn-twitter {
+  background-color: #00aced;
+  color: #ffffff;
+  border-radius: 50px;
+}

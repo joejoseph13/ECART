@@ -1,0 +1,158 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box{
+  background-color: #ff8a00;
+  width:650px;
+  height:600px;
+  color: white;
+  text-align: center;
+  padding: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  }
+
+.cat{
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid white;
+    width: 100%;
+    max-width: 210px;
+}
+
+.des{
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid white;
+    height: 100px;
+    width: 100%;
+    max-width: 210px;
+}
+
+.save{
+    width: 173px;
+    height: 40px;
+    background-color: blue;
+    margin-top: 50px;
+    color: aliceblue;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.label{
+    margin-left:-50px;
+}
+
+input.ng-invalid.ng-touched{
+  border:rgb(245, 11, 11) 3px solid;
+}
+
+@media (max-width: 576px) {
+.row{
+  display: block;
+}
+.col-6{
+  width: auto;
+}
+.box h2 {
+  font-size: 20px;
+}
+label{
+  width: 119px;
+}
+.label{
+  font-size: 10px;
+}
+#imagesrc{
+  margin-right: 190px;
+  width: 50px;
+  height: 50px;
+}
+.box {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+
+.save {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.lock {
+  top: initial;
+  left: initial;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+.box h2 {
+  font-size: 30px;
+}
+.row{
+  margin: 0;
+}
+#imagesrc{
+  margin-right: 100px;
+  width: 100px;
+  height: 100px;
+}
+.box {
+  width: 100%;
+  height: auto;
+  padding: 30px;
+}
+
+.lock {
+  top: initial;
+  left: initial;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+.box h2 {
+  font-size: 40px;
+}
+.col-6{
+  padding-left: 40px;
+}
+#imagesrc{
+  width: 200px;
+  height: 200px;
+}
+.box {
+  width: 100%;
+  height: auto;
+  padding: 40px;
+}
+
+.lock {
+  top: initial;
+  left: initial;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+}

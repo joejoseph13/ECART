@@ -1,0 +1,52 @@
+<div class="modal fade " id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div style="background-color: orange;" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm.value)" novalidate>
+                <div class="row">
+                  <div class="mb-2 col-md-6">
+                    <label class="form-label">Product Name:</label>
+                    <input type="text" class="form-control" name="name"  ngModel required>
+                    
+                    <label class="form-label">Product Category:</label>
+                    <select class="form-control"  name="categoryId" [(ngModel)]="productData.productCategory" required>
+                      <option value="" disabled selected>Select a category</option>
+                      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+                    </select>
+                    
+                    
+                    
+                    <label class="form-label">Price:</label>
+                    <input type="number" class="form-control" name="price"  ngModel required>
+                    
+                    <label class="form-label">Available Stock:</label>
+                    <input type="number" class="form-control"  name="stock" ngModel required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Image</label>
+                    <input class="form-control" type="file" name="image" (change)="onFileChanged($event)" ngModel required>
+                <img [src]="imageSrc" alt="Selected Image" *ngIf="imageSrc" class="img-thumbnail mt-2">
+                <!-- Add an event listener (change) to trigger the onFileChanged method when the file input changes -->
+                    
+                    <label class="form-label">Description:</label>
+                    <textarea class="form-control" rows="3" id="comment" name="description" ngModel required></textarea>
+                  </div>
+                </div>
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-success" [disabled]="!productForm.valid">{{ productData.id ? 'Update' : 'Save' }}</button>
+                </div>
+              </form>
+              
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center vh-100">
+      <div class="col-md-6">
+        <div class="green-div  ">
+          <div class="row">
+            <div class="col-md-6 left-section d-flex justify-content-center align-items-center">
+              <img src="assets\av2 1.png" alt="Logo">
+            </div>
+            <div class="col-md-6 right-section">
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" formControlName="email">
+                  <div *ngIf="isFieldInvalid('email')" class="text-danger">Please enter a valid email.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password" formControlName="password">
+                  <div *ngIf="isFieldInvalid('password')" class="text-danger">Please enter your password.</div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100" [disabled]="loginForm.invalid">Login</button>
+              </form>
+              <p class="mt-3 d-flex justify-content-center">Or</p>
+             <div class="align-items-center mt-3 d-flex justify-content-center ">
+              <a href="#" class="btn btn-social btn-facebook me-3">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="btn btn-social btn-google me-3">
+                <i class="fab fa-google"></i> 
+              </a>
+              <a href="#" class="btn btn-social btn-twitter me-3">
+                <i class="fab fa-twitter"></i>
+              </a>
+  
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
